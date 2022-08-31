@@ -5,6 +5,7 @@ const URL = `http://www.omdbapi.com/?apikey=${API_KEY}&`;
 
 const movieNameEl = document.getElementById('movie-name');
 const searchFormEl = document.getElementById('search-form');
+const movieList = document.getElementById('movie-list');
 
 async function searchMovies(movieName) {
   const res = await fetch(`${URL}s=${movieName}&type=movie`);
@@ -30,8 +31,6 @@ async function getMovies(moviesIds) {
 }
 
 function displayMovies(movies) {
-  const movieList = document.getElementById('movie-list');
-
   const movieEls = movies.map((movie) => {
     return `
       <article class="movie">
@@ -83,6 +82,23 @@ function displayMovies(movies) {
   movieList.innerHTML = movieEls;
 }
 
+function addToWatchlist(movie) {
+  const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+
+  const watchlistIncludesMovie = watchlist.some(
+    (savedMovie) => savedMovie.imdbID === movie.imdbID
+  );
+
+  if (watchlistIncludesMovie) {
+    console.log('movie already added');
+    return;
+  }
+
+  console.log(watchlist);
+  watchlist.push(movie);
+  localStorage.setItem('watchlist', JSON.stringify(watchlist));
+}
+
 async function handleFormSubmit(e) {
   e.preventDefault();
 
@@ -93,4 +109,16 @@ async function handleFormSubmit(e) {
   displayMovies(movies);
 }
 
+async function handleAddMovie(e) {
+  if (!e.target.classList.contains('movie__button')) {
+    return;
+  }
+
+  const movieId = e.target.dataset.id;
+  const movie = await getMovie(movieId);
+  addToWatchlist(movie);
+}
+
 searchFormEl.addEventListener('submit', handleFormSubmit);
+
+movieList.addEventListener('click', handleAddMovie);
