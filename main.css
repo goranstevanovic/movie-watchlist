@@ -1,0 +1,191 @@
+:root {
+  --dark-accent: #8a7182;
+  --dark-shade: #3b3151;
+  --light-accent: #a1afb9;
+  --light-shade: #eff0ed;
+  --main-color: #f47b90;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--light-shade);
+  color: var(--dark-shade);
+  font-family: 'Cabin', sans-serif;
+}
+
+.header {
+  background-color: var(--dark-shade);
+  padding: 2em 1em;
+}
+
+.header__title {
+  color: #fff;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5em;
+  text-align: center;
+}
+
+.header__link {
+  color: var(--light-accent);
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.header__link:hover {
+  color: var(--light-shade);
+  text-decoration: underline;
+}
+
+.form {
+  border-radius: 0.25em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  margin: -1em 1em 2em;
+}
+
+.form__input {
+  border-radius: 0.25em 0 0 0.25em;
+  border: 1px solid var(--light-shade);
+  color: var(--dark-shade);
+  padding: 0.5em 1em;
+  width: 100%;
+}
+
+.form__input::placeholder {
+  color: var(--light-accent);
+}
+
+.form__button {
+  background-color: var(--dark-accent);
+  border-radius: 0 0.25em 0.25em 0;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5em 2em;
+}
+
+.form__button:hover {
+  background-color: var(--main-color);
+}
+
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 1em;
+  padding: 0 1em;
+}
+
+.movie {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+}
+
+.movie__title {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin: 0 0 0.25em;
+}
+
+.movie__header {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.movie__poster {
+  align-self: start;
+  width: 45%;
+}
+
+.movie__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.movie__scores {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.movie__imdb-score,
+.movie__metascore {
+  margin: 0;
+}
+
+.movie__imdb-score::before,
+.movie__metascore::before {
+  color: var(--light-accent);
+  font-size: 0.85rem;
+  margin-right: 0.25em;
+}
+
+.movie__imdb-score::before {
+  content: 'IMDb';
+}
+
+.movie__metascore::before {
+  content: 'Metacritic';
+}
+
+.movie__duration,
+.movie__release-date,
+.movie__genres {
+  margin: 0;
+}
+
+.movie__duration span,
+.movie__release-date span,
+.movie__genres span {
+  color: var(--light-accent);
+  display: block;
+  font-size: 0.85em;
+}
+
+.movie__director,
+.movie__actors {
+  margin: 0.75em 0;
+}
+
+.movie__director span,
+.movie__actors span {
+  color: var(--light-accent);
+  font-size: 0.8em;
+  line-height: 1.4;
+}
+
+.movie__plot {
+  line-height: 1.6;
+}
+
+.movie__button {
+  background-color: var(--main-color);
+  border-radius: 0.25em;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+.movie__button:hover {
+  background-color: var(--dark-accent);
+}

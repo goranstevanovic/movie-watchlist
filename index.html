@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="main.css" />
     <script src="app.js" defer></script>
@@ -17,42 +23,57 @@
 
     <form class="form">
       <input
+        class="form__input"
         type="search"
         name="movie-name"
         id="movie-name"
         placeholder="Search for a movie"
       />
-      <button>Search</button>
+      <button class="form__button">Search</button>
     </form>
 
     <main id="movie-list" class="movie-list">
       <article class="movie">
-        <img src="sample-poster.jpg" alt="" class="movie__poster" width="164" />
-        <h2 class="movie__title">The Avengers</h2>
-        <p class="movie__imdb-score">8.0</p>
-        <p class="movie__metascore">69</p>
-        <p class="movie__duration">
-          <span>Duration:</span>
-          143 min
-        </p>
-        <p class="movie__release-date">
-          <span>Release Date:</span>
-          04 May 2012
-        </p>
-        <p class="movie__genres">
-          <span>Genres:</span>
-          Action, Adventure, Sci-Fi
-        </p>
+        <h2 class="movie__title">
+          The Avengers Longer Title That Spans Across Multiple Lines and Might
+          Never Stop
+        </h2>
+        <div class="movie__header">
+          <img
+            src="sample-poster.jpg"
+            alt=""
+            class="movie__poster"
+            width="164"
+          />
+          <div class="movie__meta">
+            <div class="movie__scores">
+              <p class="movie__imdb-score">8.0</p>
+              <p class="movie__metascore">69</p>
+            </div>
+            <p class="movie__duration">
+              <span>Duration:</span>
+              143 min
+            </p>
+            <p class="movie__release-date">
+              <span>Release Date:</span>
+              04 May 2012
+            </p>
+            <p class="movie__genres">
+              <span>Genres:</span>
+              Action, Adventure, Sci-Fi
+            </p>
+          </div>
+        </div>
         <p class="movie__director">
           <span>Director:</span>
           Joss Whedon
         </p>
-        <p class="actors">
+        <p class="movie__actors">
           <span>Actors:</span>
           Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth
         </p>
-        <p class="plot">
-          Earth’s mightiest heroes must come together and learn to fight as a
+        <p class="movie__plot">
+          Earth's mightiest heroes must come together and learn to fight as a
           team if they are going to stop the mischievous Loki and his alien army
           from enslaving human race.
         </p>
@@ -60,32 +81,46 @@
       </article>
 
       <article class="movie">
-        <img src="sample-poster.jpg" alt="" class="movie__poster" width="164" />
-        <h2 class="movie__title">The Avengers</h2>
-        <p class="movie__imdb-score">8.0</p>
-        <p class="movie__metascore">69</p>
-        <p class="movie__duration">
-          <span>Duration:</span>
-          143 min
-        </p>
-        <p class="movie__release-date">
-          <span>Release Date:</span>
-          04 May 2012
-        </p>
-        <p class="movie__genres">
-          <span>Genres:</span>
-          Action, Adventure, Sci-Fi
-        </p>
+        <h2 class="movie__title">
+          The Avengers Longer Title That Spans Across Multiple Lines and Might
+          Never Stop
+        </h2>
+        <div class="movie__header">
+          <img
+            src="sample-poster.jpg"
+            alt=""
+            class="movie__poster"
+            width="164"
+          />
+          <div class="movie__meta">
+            <div class="movie__scores">
+              <p class="movie__imdb-score">8.0</p>
+              <p class="movie__metascore">69</p>
+            </div>
+            <p class="movie__duration">
+              <span>Duration:</span>
+              143 min
+            </p>
+            <p class="movie__release-date">
+              <span>Release Date:</span>
+              04 May 2012
+            </p>
+            <p class="movie__genres">
+              <span>Genres:</span>
+              Action, Adventure, Sci-Fi
+            </p>
+          </div>
+        </div>
         <p class="movie__director">
           <span>Director:</span>
           Joss Whedon
         </p>
-        <p class="actors">
+        <p class="movie__actors">
           <span>Actors:</span>
           Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth
         </p>
-        <p class="plot">
-          Earth’s mightiest heroes must come together and learn to fight as a
+        <p class="movie__plot">
+          Earth's mightiest heroes must come together and learn to fight as a
           team if they are going to stop the mischievous Loki and his alien army
           from enslaving human race.
         </p>
@@ -93,32 +128,46 @@
       </article>
 
       <article class="movie">
-        <img src="sample-poster.jpg" alt="" class="movie__poster" width="164" />
-        <h2 class="movie__title">The Avengers</h2>
-        <p class="movie__imdb-score">8.0</p>
-        <p class="movie__metascore">69</p>
-        <p class="movie__duration">
-          <span>Duration:</span>
-          143 min
-        </p>
-        <p class="movie__release-date">
-          <span>Release Date:</span>
-          04 May 2012
-        </p>
-        <p class="movie__genres">
-          <span>Genres:</span>
-          Action, Adventure, Sci-Fi
-        </p>
+        <h2 class="movie__title">
+          The Avengers Longer Title That Spans Across Multiple Lines and Might
+          Never Stop
+        </h2>
+        <div class="movie__header">
+          <img
+            src="sample-poster.jpg"
+            alt=""
+            class="movie__poster"
+            width="164"
+          />
+          <div class="movie__meta">
+            <div class="movie__scores">
+              <p class="movie__imdb-score">8.0</p>
+              <p class="movie__metascore">69</p>
+            </div>
+            <p class="movie__duration">
+              <span>Duration:</span>
+              143 min
+            </p>
+            <p class="movie__release-date">
+              <span>Release Date:</span>
+              04 May 2012
+            </p>
+            <p class="movie__genres">
+              <span>Genres:</span>
+              Action, Adventure, Sci-Fi
+            </p>
+          </div>
+        </div>
         <p class="movie__director">
           <span>Director:</span>
           Joss Whedon
         </p>
-        <p class="actors">
+        <p class="movie__actors">
           <span>Actors:</span>
           Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth
         </p>
-        <p class="plot">
-          Earth’s mightiest heroes must come together and learn to fight as a
+        <p class="movie__plot">
+          Earth's mightiest heroes must come together and learn to fight as a
           team if they are going to stop the mischievous Loki and his alien army
           from enslaving human race.
         </p>
