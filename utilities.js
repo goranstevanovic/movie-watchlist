@@ -1,4 +1,4 @@
-function displayMovies(movies) {
+function displayMovies(movies, buttonText) {
   const movieEls = movies.map((movie) => {
     return `
       <article class="movie">
@@ -42,7 +42,7 @@ function displayMovies(movies) {
         <p class="movie__plot">
           ${movie.Plot}
         </p>
-        <button class="movie__button" data-id="${movie.imdbID}">Add to Watchlist</button>
+        <button class="movie__button" data-id="${movie.imdbID}">${buttonText}</button>
       </article>
     `;
   });
