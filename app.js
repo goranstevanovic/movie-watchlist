@@ -54,7 +54,7 @@ async function handleFormSubmit(e) {
   const moviesIds = data.Search.map((movie) => movie.imdbID);
   const movies = await getMovies(moviesIds);
 
-  displayMovies(movies);
+  displayMovies(movies, 'Add to Watchlist');
 }
 
 async function handleAddMovie(e) {
