@@ -1,7 +1,7 @@
 'use strict';
 
 const API_KEY = 'c1df19cf';
-const URL = `http://www.omdbapi.com/?apikey=${API_KEY}&`;
+const URL = `https://www.omdbapi.com/?apikey=${API_KEY}&`;
 
 const movieNameEl = document.getElementById('movie-name');
 const searchFormEl = document.getElementById('search-form');
