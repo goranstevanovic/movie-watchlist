@@ -1,4 +1,13 @@
-function displayMovies(movies, buttonText) {
+function displayMovies(movies, buttonText, message = '') {
+  if (movies.length === 0) {
+    movieList.innerHTML = `
+      <p id="message" class="movie-list__text">
+        ${message}
+      </p>
+    `;
+    return;
+  }
+
   const movieEls = movies.map((movie) => {
     return `
       <article class="movie">
