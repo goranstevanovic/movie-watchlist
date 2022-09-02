@@ -88,6 +88,13 @@ body {
   padding: 0 1em;
 }
 
+.movie-list__text {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--dark-accent);
+}
+
+.movie-list__text,
 .movie {
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);

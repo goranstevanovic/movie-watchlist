@@ -1,23 +1,37 @@
 const movieList = document.getElementById('movie-list');
+const message = document.getElementById('message');
 
 let movies = JSON.parse(localStorage.getItem('watchlist')) || [];
 
-displayMovies(movies, 'Remove from Watchlist');
+if (movies.length === 0) {
+  message.textContent = 'Your watch list is currently empty';
+} else {
+  displayMovies(
+    movies,
+    'Remove from Watchlist',
+    'Your watch list is currently empty'
+  );
 
-function removeFromWatchlist(movieId) {
-  movies = movies.filter((movie) => movie.imdbID !== movieId);
-}
-
-function handleRemoveMovie(e) {
-  if (!e.target.classList.contains('movie__button')) {
-    return;
+  function removeFromWatchlist(movieId) {
+    movies = movies.filter((movie) => movie.imdbID !== movieId);
+    localStorage.setItem('watchlist', JSON.stringify(movies));
   }
 
-  const movieId = e.target.dataset.id;
+  function handleRemoveMovie(e) {
+    if (!e.target.classList.contains('movie__button')) {
+      return;
+    }
 
-  removeFromWatchlist(movieId);
+    const movieId = e.target.dataset.id;
 
-  displayMovies(movies, 'Remove from Watchlist');
+    removeFromWatchlist(movieId);
+
+    displayMovies(
+      movies,
+      'Remove from Watchlist',
+      'Your watch list is currently empty'
+    );
+  }
+
+  movieList.addEventListener('click', handleRemoveMovie);
 }
-
-movieList.addEventListener('click', handleRemoveMovie);
