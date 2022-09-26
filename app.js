@@ -3,8 +3,11 @@
 const API_KEY = 'c1df19cf';
 const URL = `https://www.omdbapi.com/?apikey=${API_KEY}&`;
 
+const searchLoadingMessage = 'Searching for movies...';
+
 const movieNameEl = document.getElementById('movie-name');
 const searchFormEl = document.getElementById('search-form');
+const messageEl = document.getElementById('message');
 const movieList = document.getElementById('movie-list');
 
 async function searchMovies(movieName) {
@@ -49,6 +52,8 @@ function addToWatchlist(movie) {
 
 async function handleFormSubmit(e) {
   e.preventDefault();
+
+  messageEl.textContent = searchLoadingMessage;
 
   const data = await searchMovies(movieNameEl.value.trim().toLowerCase());
   const moviesIds = data.Search.map((movie) => movie.imdbID);
