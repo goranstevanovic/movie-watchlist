@@ -4,6 +4,7 @@ const API_KEY = 'c1df19cf';
 const URL = `https://www.omdbapi.com/?apikey=${API_KEY}&`;
 
 const searchLoadingMessage = 'Searching for movies...';
+const noMovieFoundMessage = 'No movies were found.';
 
 const movieNameEl = document.getElementById('movie-name');
 const searchFormEl = document.getElementById('search-form');
@@ -56,6 +57,16 @@ async function handleFormSubmit(e) {
   messageEl.textContent = searchLoadingMessage;
 
   const data = await searchMovies(movieNameEl.value.trim().toLowerCase());
+
+  if (data.Error) {
+    movieList.innerHTML = `
+      <p id="message" class="movie-list__text">
+        ${noMovieFoundMessage}
+      </p>
+    `;
+    return;
+  }
+
   const moviesIds = data.Search.map((movie) => movie.imdbID);
   const movies = await getMovies(moviesIds);
 
