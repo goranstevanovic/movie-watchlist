@@ -4,6 +4,8 @@ const API_KEY = 'c1df19cf';
 const URL = `https://www.omdbapi.com/?apikey=${API_KEY}&`;
 
 const searchLoadingMessage = 'Searching for movies...';
+const searchErrorMessage =
+  'There was a problem with a search. Please try again.';
 const noMovieFoundMessage = 'No movies were found.';
 
 const movieNameEl = document.getElementById('movie-name');
@@ -12,9 +14,13 @@ const messageEl = document.getElementById('message');
 const movieList = document.getElementById('movie-list');
 
 async function searchMovies(movieName) {
-  const res = await fetch(`${URL}s=${movieName}&type=movie`);
-  const data = await res.json();
-  return data;
+  try {
+    const res = await fetch(`${URL}s=${movieName}&type=movie`);
+    const data = await res.json();
+    return data;
+  } catch (e) {
+    throw new Error(e);
+  }
 }
 
 async function getMovie(movieId) {
@@ -56,7 +62,27 @@ async function handleFormSubmit(e) {
 
   messageEl.textContent = searchLoadingMessage;
 
-  const data = await searchMovies(movieNameEl.value.trim().toLowerCase());
+  let data = null;
+
+  try {
+    data = await searchMovies(movieNameEl.value.trim().toLowerCase());
+  } catch (e) {
+    movieList.innerHTML = `
+      <p id="message" class="movie-list__text">
+        ${searchErrorMessage}
+      </p>
+    `;
+    return;
+  }
+
+  // if (data === undefined) {
+  //   movieList.innerHTML = `
+  //     <p id="message" class="movie-list__text">
+  //       ${searchErrorMessage}
+  //     </p>
+  //   `;
+  //   return;
+  // }
 
   if (data.Error) {
     movieList.innerHTML = `
