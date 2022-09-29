@@ -73,6 +73,7 @@ body {
   border: none;
   color: #fff;
   font-weight: 600;
+  min-width: 9em;
   padding: 0.5em 2em;
 }
 

@@ -1,4 +1,11 @@
-function displayMovies(movies, buttonText, message = '') {
+function displayMovies(movies, buttonText, icon = '', message = '') {
+  let iconEl;
+  if (icon === 'add') {
+    iconEl = '<i class="fa-solid fa-circle-plus"></i>';
+  } else if (icon === 'remove') {
+    iconEl = '<i class="fa-solid fa-circle-minus"></i>';
+  }
+
   if (movies.length === 0) {
     movieList.innerHTML = `
       <p id="message" class="movie-list__text">
@@ -51,7 +58,10 @@ function displayMovies(movies, buttonText, message = '') {
         <p class="movie__plot">
           ${movie.Plot}
         </p>
-        <button class="movie__button" data-id="${movie.imdbID}">${buttonText}</button>
+        <button class="movie__button" data-id="${movie.imdbID}">
+          ${icon && iconEl}
+          ${buttonText}
+        </button>
       </article>
     `;
   });
