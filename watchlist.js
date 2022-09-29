@@ -9,6 +9,7 @@ if (movies.length === 0) {
   displayMovies(
     movies,
     'Remove from Watchlist',
+    'remove',
     'Your watch list is currently empty'
   );
 
@@ -29,6 +30,7 @@ if (movies.length === 0) {
     displayMovies(
       movies,
       'Remove from Watchlist',
+      'remove',
       'Your watch list is currently empty'
     );
   }
