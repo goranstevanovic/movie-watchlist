@@ -50,9 +50,15 @@ body {
 
 .form {
   border-radius: 0.25em;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   display: flex;
-  margin: -1em 1em 2em;
+  margin: -1em auto 2em;
+  max-width: 45em;
+  padding: 0 1em;
+}
+
+.form__input,
+.form__button {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
 
 .form__input {
@@ -85,7 +91,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  margin-bottom: 1em;
+  margin: 0 auto 1em;
+  max-width: 45em;
   padding: 0 1em;
 }
 
