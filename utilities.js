@@ -66,5 +66,5 @@ function displayMovies(movies, buttonText, icon = '', message = '') {
     `;
   });
 
-  movieList.innerHTML = movieEls;
+  movieList.innerHTML = movieEls.join('\n');
 }
